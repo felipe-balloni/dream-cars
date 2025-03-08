@@ -1,0 +1,92 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
+class ProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        collect(['Toyota', 'Ford', 'Volkswagen', 'BMW', 'Honda'])
+            ->each(fn ($brand) => Brand::factory()
+                ->create(['name' => $brand, 'slug' => Str::slug($brand)]));
+
+        collect(['SUV', 'Sedan', 'Hatchback', 'Pickup', 'Esportivo'])
+            ->each(fn ($category) => Category::factory()
+                ->create(['name' => $category, 'slug' => Str::slug($category)]));
+
+        $products = [
+            [
+                'name' => 'Corolla',
+                'brand' => 'Toyota',
+                'category' => 'Sedan',
+                'description' => 'Toyota Corolla, um sedan confiável, econômico e indicado para longas viagens.',
+                'image_url' => 'resources/images/corolla.png',
+            ],
+            [
+                'name' => 'RAV4',
+                'brand' => 'Toyota',
+                'category' => 'SUV',
+                'description' => 'Toyota RAV4, um SUV com conforto e robustez, ideal para famílias e aventuras.',
+                'image_url' => 'resources/images/rav4.png',
+            ],
+            [
+                'name' => 'Golf',
+                'brand' => 'Volkswagen',
+                'category' => 'Hatchback',
+                'description' => 'Volkswagen Golf Hatchback, esportivo, compacto e com eficiência energética.',
+                'image_url' => 'resources/images/golf.png',
+            ],
+            [
+                'name' => 'Amarok',
+                'brand' => 'Volkswagen',
+                'category' => 'Pickup',
+                'description' => 'Volkswagen Amarok, pickup robusta, resistente a terrenos difíceis e perfeita para o trabalho.',
+                'image_url' => 'resources/images/amarok.png',
+            ],
+            [
+                'name' => 'Mustang',
+                'brand' => 'Ford',
+                'category' => 'Esportivo',
+                'description' => 'Ford Mustang, lendário esportivo americano com potência incomparável.',
+                'image_url' => 'resources/images/mustang.png',
+            ],
+            [
+                'name' => 'Civic',
+                'brand' => 'Honda',
+                'category' => 'Sedan',
+                'description' => 'Honda Civic, sedan reconhecido pela esportividade, conforto e elegância.',
+                'image_url' => 'resources/images/civic.png',
+            ],
+            [
+                'name' => 'X5',
+                'brand' => 'BMW',
+                'category' => 'SUV',
+                'description' => 'BMW X5, SUV premium com luxo, performance e tecnologia avançada.',
+                'image_url' => 'resources/images/x5.png',
+            ],
+        ];
+
+        foreach ($products as $product) {
+            $brand = Brand::where('name', $product['brand'])->first();
+            $category = Category::where('name', $product['category'])->first();
+
+            Product::factory()->create([
+                'name' => $product['name'],
+                'slug' => Str::slug($product['name']),
+                'description' => $product['description'],
+                'image' => $product['image_url'],
+                'brand_id' => $brand->id,
+                'category_id' => $category->id,
+            ]);
+        }
+    }
+}
