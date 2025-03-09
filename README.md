@@ -1,7 +1,13 @@
 # Projeto Venice - Laravel & Livewire
 
-Este repositório contém um mecanismo de busca com filtros combinados implementado com Laravel e Livewire, utilizando
-Docker e Laravel Sail.
+🚀 **Um projeto Laravel com Livewire para gestão eficiente de catálogo de veículos.**
+
+🔍 Pesquise, filtre, ordene e explore produtos com facilidade, proporcionando a melhor experiência de usuário com
+componentes interativos e responsivos.
+
+⚡️ Totalmente local e simples de executar!
+
+Implementado com Laravel 12 e Livewire 3, utilizando Docker e Laravel Sail.
 
 ## 💡Pré-requisitos
 

@@ -23,8 +23,7 @@
         <p class="mt-4 max-w-xl text-sm md:text-base text-gray-700 leading-relaxed">
             <span
                 class="strong font-semibold">{{ __('Zero-kilometer vehicles and cutting-edge technology!') }}</span><br/>
-            {{ __('Rent with a monthly contract and enjoy freedom without commitment.
-             Flexible plans, zero bureaucracy, and guaranteed savings. Reserve now!') }}
+            {{ __('Rent with a monthly contract and enjoy freedom without commitment. Flexible plans, zero bureaucracy, and guaranteed savings. Reserve now!') }}
         </p>
     </div>
 
