@@ -1,12 +1,16 @@
 # Projeto Venice - Laravel & Livewire
 
-Este repositório contém um mecanismo de busca com filtros combinados implementado com Laravel e Livewire, utilizando Docker e Laravel Sail.
+Este repositório contém um mecanismo de busca com filtros combinados implementado com Laravel e Livewire, utilizando
+Docker e Laravel Sail.
 
-## Pré-requisitos
+## 💡Pré-requisitos
 
-* Docker e Docker Compose instalados.
+Você precisa **apenas do Docker e Docker Compose** instalados:
 
-## Passo a passo para rodar o projeto
+- Docker: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
+- Docker Compose (já incluso nas versões recentes do Docker)
+
+## 🚀 Passo a passo para rodar o projeto
 
 ### 1. Clone o repositório
 
@@ -26,6 +30,7 @@ docker run --rm \
 -w /var/www/html \
 composer:latest composer install --ignore-platform-reqs
 ```
+
 Este comando instalará as dependências diretamente via Docker.
 
 ### 3.Inicializar Laravel Sail
@@ -82,9 +87,31 @@ Rodar testes automatizados:
 sail artisan test
 ```
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
+
 * Migrations: Estrutura das tabelas
-* Factories: Criação de dados de teste 
+* Factories: Criação de dados de teste
 * Seeders: Dados iniciais do banco
 * Livewire Components: Componentes para busca e filtragem
+
+## 📸 Screenshots
+
+### Tela inicial:
+
+<img src="docs/screenshots/desktop.jpeg" alt="Tela Inicial" width="1000px"/>
+
+### Filtros versão Mobile e Tablet:
+
+<img src="docs/screenshots/mobile.jpeg" alt="Tela Inicial" width="400px"/>
+<img src="docs/screenshots/tablet.jpeg" alt="Tela Inicial" width="600px"/>
+
+### Tela de filtros Mobile:
+
+<img src="docs/screenshots/filters-mobile.jpeg" alt="Filtros Mobile" width="400px"/>
+
+### Página de detalhes do carro:
+
+<img src="docs/screenshots/car-details.jpeg" alt="Detalhes do Carro" width="800px"/>
+
+
 
