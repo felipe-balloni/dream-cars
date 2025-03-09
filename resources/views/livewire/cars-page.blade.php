@@ -423,7 +423,7 @@
                     ( {{  __(Str::of($sort)->headline()->lower()->value()) }} )
                 </span>
             </h2>
-            <p class="text-sm text-gray-700">{{ __('Chose your next dream, click to see details!') }}</p>
+            <p class="text-sm text-gray-700">{{ __('Chose your next dream car, click to see details!') }}</p>
             <div
                 class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 overflow-x-auto items-stretch py-2">
                 @forelse ($products as $product)
@@ -433,7 +433,7 @@
                         <x-product-card :product="$product"/>
                     </div>
                 @empty
-                    <p> {{ __('No products found!') }}</p>
+                    <p> {{ __('No results found!') }}</p>
                 @endforelse
             </div>
             <div class="mt-4 md:mt-8">
