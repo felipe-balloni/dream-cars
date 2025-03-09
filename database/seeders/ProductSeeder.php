@@ -15,11 +15,11 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        collect(['Toyota', 'Ford', 'Volkswagen', 'BMW', 'Honda'])
+        collect(['Toyota', 'Ford', 'Volkswagen', 'BMW', 'Honda', 'Audi', 'Mercedes-Benz', 'Porsche', 'Chevrolet', 'Nissan', 'Tesla'])
             ->each(fn ($brand) => Brand::factory()
                 ->create(['name' => $brand, 'slug' => Str::slug($brand)]));
 
-        collect(['SUV', 'Sedan', 'Hatchback', 'Pickup', 'Esportivo'])
+        collect(['SUV', 'Sedan', 'Hatchback', 'Pickup', 'Esportivo', 'Elétrico'])
             ->each(fn ($category) => Category::factory()
                 ->create(['name' => $category, 'slug' => Str::slug($category)]));
 
@@ -72,6 +72,48 @@ class ProductSeeder extends Seeder
                 'category' => 'SUV',
                 'description' => 'BMW X5, SUV premium com luxo, performance e tecnologia avançada.',
                 'image_url' => 'resources/images/x5.png',
+            ],
+            [
+                'name' => 'Audi A4',
+                'brand' => 'Audi',
+                'category' => 'Sedan',
+                'description' => 'Audi A4, um sedan premium com design moderno, conforto e tecnologia avançada.',
+                'image_url' => 'resources/images/audi-a4.png',
+            ],
+            [
+                'name' => 'Mercedes-Benz GLE',
+                'brand' => 'Mercedes-Benz',
+                'category' => 'SUV',
+                'description' => 'Mercedes-Benz GLE, um SUV luxuoso com alto desempenho e tecnologia de ponta.',
+                'image_url' => 'resources/images/mercedes-gle.png',
+            ],
+            [
+                'name' => 'Porsche 911',
+                'brand' => 'Porsche',
+                'category' => 'Esportivo',
+                'description' => 'Porsche 911, um dos carros esportivos mais icônicos, com desempenho impressionante.',
+                'image_url' => 'resources/images/porsche-911.png',
+            ],
+            [
+                'name' => 'Chevrolet Camaro',
+                'brand' => 'Chevrolet',
+                'category' => 'Esportivo',
+                'description' => 'Chevrolet Camaro, um muscle car com design agressivo e motor potente.',
+                'image_url' => 'resources/images/camaro.png',
+            ],
+            [
+                'name' => 'Nissan GT-R',
+                'brand' => 'Nissan',
+                'category' => 'Esportivo',
+                'description' => 'Nissan GT-R, um superesportivo lendário com alta performance e tecnologia avançada.',
+                'image_url' => 'resources/images/nissan-gtr.png',
+            ],
+            [
+                'name' => 'Tesla Model S',
+                'brand' => 'Tesla',
+                'category' => 'Elétrico',
+                'description' => 'Tesla Model S, um sedan elétrico futurista com tecnologia inovadora e desempenho impressionante.',
+                'image_url' => 'resources/images/tesla-model-s.png',
             ],
         ];
 
