@@ -274,7 +274,7 @@
                         <button type="button" wire:click="resetFilters"
                                 class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-2 py-1
                                      rounded mx-4 whitespace-nowrap cursor-pointer">
-                            {{ __('Clean filters') }}
+                            {{ __('Clear Filters') }}
                         </button>
                     @endif
                     <button
@@ -293,7 +293,7 @@
                                 <button type="button" wire:click="resetFilters"
                                         class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-4 py-2
                                      rounded mx-4 whitespace-nowrap cursor-pointer">
-                                    {{ __('Clean filters') }}
+                                    {{ __('Clear filters') }}
                                 </button>
                             @endif
                             <input

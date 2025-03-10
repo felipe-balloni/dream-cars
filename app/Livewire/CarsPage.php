@@ -125,7 +125,8 @@ class CarsPage extends Component
                 'rating',
                 'sales',
                 'category_id',
-                'brand_id'
+                'brand_id',
+                'created_at',
             )
             ->with('category:id,name,slug', 'brand:id,name,slug')
             ->when($this->search, function ($query) {
@@ -144,7 +145,7 @@ class CarsPage extends Component
                 $query->orderBy('sales', 'desc');
             })
             ->when($this->sort === 'newest', function ($query) {
-                $query->orderBy('created_at', 'desc');
+                $query->orderBy('id', 'desc');
             })
             ->when($this->sort === 'best_rating', function ($query) {
                 $query->orderBy('rating', 'desc');
